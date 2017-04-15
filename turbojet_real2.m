@@ -11,30 +11,30 @@ format long
 % Inputs------------------------------------------------------------------%
 
 m0    = 0:0.5:3;                 %M0 CONJUNTO FECHADO ()
-M0    = m0';                      %transposta 
+M0    = m0';                     %transposta 
 T0    = 216.7;                   %temperatura inicial    |K|
-hpr   = 42798.4;                 %    |kJ/kg|
-yc    = 1.4;                     %   |adimensional|
-Cpc   = 1.004832;                %             |kJ/kgK|
+hpr   = 42798.4;                 %      |kJ/kg|
+yc    = 1.4;                     %      |adimensional|
+Cpc   = 1.004832;                %      |kJ/kgK|
 yt    = 1.35;                    
 Cpt   = 1.0969416;               %      |kJ/kgK|
-Tt4   = 1666.7;          %temperaturas no fim da camara de combustao |K|
-p0_p9 = 1;    %      |adimensional|
-pi_dmax = 0.98;%      |adimensional|
-pi_c  = 2:0.5:40;   %varredura em pi_c - entra nas colunas das matrizes
-pi_b  = 0.98;     %      |adimensional|
-pi_n  = 0.99;   %      |adimensional|
-e_c   = 0.92;    %      |adimensional|
-e_t   = 0.91;     %      |adimensional|
-n_b   = 0.99;    %      |adimensional|
-n_m   = 0.98;    %      |adimensional|
+Tt4   = 1666.7;                  %temperaturas no fim da camara de combustao |K|
+p0_p9 = 1;                       %      |adimensional|
+pi_dmax = 0.98;                  %      |adimensional|
+pi_c  = 2:2:40;                  %varredura em pi_c - entra nas colunas das matrizes
+pi_b  = 0.98;                    %      |adimensional|
+pi_n  = 0.99;                    %      |adimensional|
+e_c   = 0.92;                    %      |adimensional|
+e_t   = 0.91;                    %      |adimensional|
+n_b   = 0.99;                    %      |adimensional|
+n_m   = 0.98;                    %      |adimensional|
 
 
 j = length(M0);%cada linha do grafico CONJUNTO FECHADO
 n = length(pi_c);
 %-------------------------------------------------------------------------%
 
-%saida--------------------------------------------------------------------%
+%Outputs--------------------------------------------------------------------%
 %       F/m0ponto = |N/(kg/s)|      -> empuxo
 %       f         = |adimensional|  -> razao combustivel/ air
 %       s         = |(mg/s)/N|      -> consumo espeficico de combustivel por empuxo
@@ -96,31 +96,39 @@ for i = 1:j
         figure(1)
         subplot(2,2,1)
         plot(pi_c,F_m0ponto)
+        ylim([0 1200])
         xlabel('pi_c')
         ylabel('F/m_0')
         grid
+        grid minor
         legend('0','0.5','1','1.5','2','2.5','3')
 
         subplot(2,2,2)
         plot(pi_c,f)
+        ylim ([0 0.045])
         xlabel('pi_c')
         ylabel('f')
         grid
+        grid minor
 
         subplot(2,2,3)
         plot(pi_c,s)
+        ylim ([20 65])
         xlabel('pi_c')
         ylabel('s')
         grid
+        grid minor
 
         subplot(2,2,4)
         plot(pi_c,nT,pi_c,nP,pi_c,n0)
+        ylim([0 1])
         xlabel('pi_c')
         ylabel('n')
         grid
+        grid minor
         legend('nT','nP','n0')
 
-       
     end
 end
+       
 %----------------------------------------------------------------------%
