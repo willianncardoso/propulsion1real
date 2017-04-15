@@ -18,16 +18,20 @@ yc    = 1.4;                     %      |adimensional|
 Cpc   = 1.004832;                %      |kJ/kgK|
 yt    = 1.35;                    
 Cpt   = 1.0969416;               %      |kJ/kgK|
-yAB   = 
+yAB   =                          %      |adimensional|
+CpAB  =                          %      |kJ/kgK|
 Tt4   = 1666.7;                  %temperaturas no fim da camara de combustao |K|
+Tt7   = 1666.7;                  %temperaturas no fim do Afterburner |K|
 p0_p9 = 1;                       %      |adimensional|
 pi_dmax = 0.98;                  %      |adimensional|
 pi_c  = 2:2:40;                  %varredura em pi_c - entra nas colunas das matrizes
 pi_b  = 0.98;                    %      |adimensional|
+pi_AB =                          %      |adimensional|
 pi_n  = 0.99;                    %      |adimensional|
 e_c   = 0.92;                    %      |adimensional|
 e_t   = 0.91;                    %      |adimensional|
 n_b   = 0.99;                    %      |adimensional|
+n_AB  = 0.98;                    %      |adimensional|
 n_m   = 0.98;                    %      |adimensional|
 
 
@@ -40,6 +44,7 @@ n = length(pi_c);
 %Outputs--------------------------------------------------------------------%
 %       F/m0ponto = |N/(kg/s)|      -> empuxo
 %       f         = |adimensional|  -> razao combustivel/ air
+%       fAB       = |adimensional|  -> 
 %       s         = |(mg/s)/N|      -> consumo espeficico de combustivel por empuxo
 %       nT        = |adimensional|  -> eficiencia termica
 %       nP        = |adimensional|  -> eficiencia propulsiva
