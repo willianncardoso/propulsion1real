@@ -31,6 +31,8 @@ n_b   = 0.99;                    %      |adimensional|
 n_m   = 0.98;                    %      |adimensional|
 
 
+
+
 j = length(M0);%cada linha do grafico CONJUNTO FECHADO
 n = length(pi_c);
 %-------------------------------------------------------------------------%
