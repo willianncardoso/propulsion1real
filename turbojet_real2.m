@@ -66,7 +66,7 @@ for i = 1:j
 
     Rc          = ((yc-1)/yc)*Cpc;                        %1
     Rt          = ((yt-1)/yt)*Cpt;                        %2
-    a0          = sqrt(yc*Rc*1000*T0);                         %3
+    a0          = sqrt(yc*Rc*1000*T0);                     %3
     V0          = a0*M0;                                  %4
     tau_r       = 1+((yc-1)/2).*((M0).^2);                %5
     pi_r        = (tau_r).^(yc/(yc-1));                   %6
