@@ -127,8 +127,6 @@ for i = 1:j
         grid
         grid minor
         legend('nT','nP','n0')
- 
-        
     end
 end
        
